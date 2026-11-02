@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis XV años — Andrea</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #090909;
+      color: #f5ead5;
+      font-family: Georgia, serif;
+      text-align: center;
+    }
+
+    main {
+      max-width: 480px;
+      margin: auto;
+      padding: 24px 18px 60px;
+    }
+
+    section {
+      padding: 40px 20px;
+      border: 1px solid #80652d;
+      margin-bottom: 24px;
+      background: linear-gradient(145deg, #1c1912, #0c0c0c);
+      border-radius: 16px;
+    }
+
+    h1, h2 {
+      color: #d4af37;
+      font-weight: normal;
+    }
+
+    h1 {
+      font-size: clamp(44px, 12vw, 64px);
+      margin: 14px 0;
+      overflow-wrap: anywhere;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin: 0 0 24px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .etiqueta {
+      color: #d4af37;
+      font-size: 14px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .foto {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 28px auto;
+      border: 2px solid #d4af37;
+      border-radius: 140px 140px 12px 12px;
+    }
+
+    .boton {
+      display: inline-block;
+      max-width: 100%;
+      padding: 14px 24px;
+      color: #d4af37;
+      border: 1px solid #d4af37;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .boton:hover {
+      background: #d4af37;
+      color: #090909;
+    }
+
+    .contador {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 8px;
+      margin: 24px 0;
+    }
+
+    .contador div {
+      padding: 14px 2px;
+      background: #090909;
+      border: 1px solid #80652d;
+      border-radius: 8px;
+    }
+
+    .contador strong {
+      display: block;
+      color: #d4af37;
+      font-size: 28px;
+    }
+
+    .contador span {
+      font-size: 11px;
+    }
+
+    footer {
+      color: #b9a77b;
+      font-size: 13px;
+      padding: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  
+<!-- PANTALLA DE BIENVENIDA AIZE DIGITAL -->
+<style>
+  #bienvenida-aize {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background:
+      radial-gradient(circle, #292013, #080808 75%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 25px;
+    transition: opacity 1.2s ease;
+  }
+
+  .contenido-bienvenida {
+    border: 1px solid #d4af37;
+    border-radius: 25px;
+    padding: 50px 25px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 0 35px #d4af3725;
+  }
+
+  .contenido-bienvenida h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(45px, 10vw, 75px);
+    color: #d4af37;
+    margin: 20px 0;
+  }
+
+  .contenido-bienvenida p {
+    color: #f4e2ad;
+    letter-spacing: 3px;
+  }
+
+  #abrir-aize {
+    background: linear-gradient(
+      135deg, #b8860b, #ffe69a, #b8860b
+    );
+    color: #17120a;
+    border: none;
+    border-radius: 35px;
+    padding: 17px 35px;
+    margin-top: 25px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 20px #d4af3766;
+  }
+
+  #bienvenida-aize.ocultar {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #bienvenida-aize {
+      transition: none;
+    }
+  }
+</style>
+
+<div id="bienvenida-aize">
+  <div class="contenido-bienvenida">
+    <p>ESTÁS CORDIALMENTE INVITADO A</p>
+    <h1>Andrea</h1>
+    <h2>Mis XV años</h2>
+    <p>Una noche llena de magia</p>
+
+    <button id="abrir-aize" type="button">
+      ✨ Abrir invitación
+    </button>
+  </div>
+</div>
+
+<script>
+  document.getElementById("abrir-aize")
+    .addEventListener("click", async function () {
+
+      const portada =
+        document.getElementById("bienvenida-aize");
+
+      portada.classList.add("ocultar");
+
+      setTimeout(() => {
+        portada.remove();
+      }, 1200);
+
+      // Iniciar música si existe el reproductor
+      const audio = document.getElementById("musica");
+
+      if (audio) {
+        try {
+          await audio.play();
+        } catch (error) {
+          console.log(
+            "La música puede iniciarse manualmente."
+          );
+        }
+      }
+    });
+</script>
+<!-- FIN DE BIENVENIDA -->
+
+  <main>
+
+    <!-- PORTADA -->
+    <section>
+      <p class="etiqueta">Estás invitado a</p>
+      <h1>Andrea</h1>
+      <h2>Mis XV años</h2>
+
+      <img
+        class="foto"
+        src="photo1667968519.jpeg"
+        alt="Fotografía de Andrea"
+      >
+
+      <p>Una noche especial para compartir contigo.</p>
+      <p>20 de diciembre de 2026<br>19:00 horas</p>
+    </section>
+
+    <!-- CUENTA REGRESIVA -->
+    <section class="entrada-aize">
+      <h2>Tan solo faltan</h2>
+
+      <div class="contador" id="contador">
+        <div>
+          <strong id="dias">00</strong>
+          <span>DÍAS</span>
+        </div>
+        <div>
+          <strong id="horas">00</strong>
+          <span>HORAS</span>
+        </div>
+        <div>
+          <strong id="minutos">00</strong>
+          <span>MINUTOS</span>
+        </div>
+        <div>
+          <strong id="segundos">00</strong>
+          <span>SEGUNDOS</span>
+        </div>
+      </div>
+
+      <p id="mensaje-contador">Para celebrar juntos este gran día.</p>
+    </section>
+
+    <!-- RECEPCIÓN -->
+    <section>
+      <h2>Recepción</h2>
+      <p>Salón de Eventos<br>La Paz, Bolivia</p>
+      <p>19:00 horas</p>
+
+      <a
+        class="boton"
+        href="https://www.google.com/maps"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Ver ubicación
+      </a>
+
+      <p><small>Ubicación de ejemplo: falta agregar el salón exacto.</small></p>
+    </section>
+
+    <!-- VESTIMENTA -->
+    <section>
+      <h2>Código de vestimenta</h2>
+      <p class="etiqueta">Formal</p>
+      <p>Ven con tu mejor estilo para esta noche especial.</p>
+    </section>
+<!-- MÚSICA -->
+
+<!-- MÚSICA -->
+<section>
+  <h2>Mi canción favorita</h2>
+  <p>Dale play y acompáñame a soñar.</p>
+</section>
+
+<audio id="musica" loop preload="none">
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<button id="boton-musica" onclick="controlarMusica()">
+  🎵
+</button>
+
+<style>
+  #boton-musica {
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    z-index: 1000;
+    background: linear-gradient(135deg, #d4af37, #f8e7a0);
+    color: #17120a;
+    border: 2px solid #fff0b3;
+    border-radius: 40px;
+    padding: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 18px #0008;
+  }
+
+  #boton-musica:hover {
+    transform: scale(1.05);
+  }
+</style>
+
+<script>
+  const musica = document.getElementById("musica");
+  const botonMusica = document.getElementById("boton-musica");
+
+  async function controlarMusica() {
+    if (musica.paused) {
+      try {
+        await musica.play();
+        botonMusica.textContent = "⏸";
+      } catch (error) {
+        alert("No se pudo reproducir la música.");
+      }
+    } else {
+      musica.pause();
+      botonMusica.textContent = "🎵";
+    }
+  }
+</script>
+
+
+<!-- CONFIRMACIÓN -->
+<section>
+  <h2>Confirma tu asistencia</h2>
+  <p>¡Me encantará compartir esta noche contigo!</p>
+
+  <a
+    class="boton"
+    id="confirmar-whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    hidden
+  >
+    Confirmar por WhatsApp
+  </a>
+
+  <p id="aviso-whatsapp">
+    Falta configurar el número de confirmación.
+  </p>
+</section>
+
+<script>
+  // Escribe el número con código de país, sin + ni espacios.
+  // Bolivia: 591 seguido del número de celular.
+  const numeroWhatsApp = "59179693304";
+
+  if (/^\d{10,15}$/.test(numeroWhatsApp)) {
+    const mensaje = "Hola, quiero confirmar mi asistencia a los XV años de Andrea.";
+    const enlace = document.getElementById("confirmar-whatsapp");
+
+    enlace.href =
+      "https://wa.me/" + numeroWhatsApp +
+      "?text=" + encodeURIComponent(mensaje);
+
+    enlace.hidden = false;
+    enlace.style.display = "inline-block";
+    document.getElementById("aviso-whatsapp").hidden = true;
+  } else {
+    document.getElementById("confirmar-whatsapp").style.display = "none";
+  }
+</script>
+    <!-- DESPEDIDA -->
+    <section>
+      <h2>¡Te espero!</h2>
+      <p>Tu compañía hará que esta celebración sea inolvidable.</p>
+      <p>Con cariño,<br>Andrea</p>
+    </section>
+
+    <footer>Invitación de práctica · AIZE DIGITAL</footer>
+  </main>
+
+  <script>
+    // Fecha de ejemplo, con la zona horaria de Bolivia.
+    const fechaEvento = new Date("2026-12-20T19:00:00-04:00").getTime();
+
+    function actualizarContador() {
+      const diferencia = Math.max(0, fechaEvento - Date.now());
+
+      const dias = Math.floor(diferencia / 86400000);
+      const horas = Math.floor((diferencia % 86400000) / 3600000);
+      const minutos = Math.floor((diferencia % 3600000) / 60000);
+      const segundos = Math.floor((diferencia % 60000) / 1000);
+
+      document.getElementById("dias").textContent =
+        String(dias).padStart(2, "0");
+
+      document.getElementById("horas").textContent =
+        String(horas).padStart(2, "0");
+
+      document.getElementById("minutos").textContent =
+        String(minutos).padStart(2, "0");
+
+      document.getElementById("segundos").textContent =
+        String(segundos).padStart(2, "0");
+
+      if (diferencia === 0) {
+        document.getElementById("mensaje-contador").textContent =
+          "¡Llegó el gran día!";
+      }
+    }
+
+    actualizarContador();
+    setInterval(actualizarContador, 1000);
+  </script>
+  
+<!-- ANIMACIONES AIZE DIGITAL -->
+<style>
+  /* Entrada suave de las secciones */
+  @keyframes aparecerElegante {
+    from {
+      opacity: 0;
+      transform: translateY(35px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  section {
+    animation: aparecerElegante 1.5s ease both;
+  }
+
+  /* Brillo dorado en los títulos */
+  @keyframes brilloDorado {
+    0%, 100% {
+      text-shadow: 0 0 5px #b8860b;
+    }
+    50% {
+      text-shadow:
+        0 0 12px #d4af37,
+        0 0 25px #ffd700;
+    }
+  }
+
+  h1, h2 {
+    animation: brilloDorado 3s ease-in-out infinite;
+  }
+
+  /* Movimiento elegante de fotografías */
+  @keyframes entradaFoto {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  img {
+    animation: entradaFoto 2s ease both;
+  }
+
+  /* Efecto de los botones */
+  .boton {
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .boton:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 20px #d4af37;
+  }
+
+  /* Accesibilidad */
+  @media (prefers-reduced-motion: reduce) {
+    section, h1, h2, img {
+      animation: none;
+    }
+  }
+</style>
+
+<style>
+  @keyframes pruebaDorada {
+    0% {
+      color: #d4af37;
+      transform: scale(1);
+    }
+    50% {
+      color: #ffffff;
+      transform: scale(1.08);
+    }
+    100% {
+      color: #d4af37;
+      transform: scale(1);
+    }
+  }
+
+  h1, h2 {
+    animation: pruebaDorada 2s ease-in-out infinite !important;
+  }
+</style>
+
+<!-- ANIMACIÓN DE ENTRADA AIZE DIGITAL -->
+<style>
+  section.entrada-aize {
+    opacity: 0;
+    transform: translateY(60px);
+    animation: none !important;
+    transition: opacity 1.2s ease,
+                transform 1.2s ease;
+  }
+
+  section.entrada-aize.visible-aize {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    section.entrada-aize {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cuadros = document.querySelectorAll("section");
+
+    if (!("IntersectionObserver" in window)) {
+      return;
+    }
+
+    const observador = new IntersectionObserver(
+      (entradas) => {
+        entradas.forEach((entrada) => {
+          if (entrada.isIntersecting) {
+            entrada.target.classList.add("visible-aize");
+            observador.unobserve(entrada.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    cuadros.forEach((cuadro) => {
+      cuadro.classList.add("entrada-aize");
+      observador.observe(cuadro);
+    });
+  });
+</script>
+
+<!-- DESTELLOS DORADOS AIZE DIGITAL -->
+<style>
+  #destellos-aize {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .particula-aize {
+    position: absolute;
+    bottom: -15px;
+    width: 4px;
+    height: 4px;
+    background: #ffd700;
+    border-radius: 50%;
+    box-shadow:
+      0 0 8px #ffd700,
+      0 0 15px #d4af37;
+    animation: flotarAize linear infinite;
+  }
+
+  @keyframes flotarAize {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    20% {
+      opacity: 0.8;
+    }
+    80% {
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-110vh);
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .particula-aize {
+      animation: none;
+      display: none;
+    }
+  }
+</style>
+
+<div id="destellos-aize" aria-hidden="true"></div>
+
+<script>
+  const fondoDestellos =
+    document.getElementById("destellos-aize");
+
+  for (let i = 0; i < 25; i++) {
+    const particula = document.createElement("span");
+
+    particula.className = "particula-aize";
+
+    particula.style.left =
+      Math.random() * 100 + "%";
+
+    particula.style.animationDuration =
+      (8 + Math.random() * 10) + "s";
+
+    particula.style.animationDelay =
+      (-Math.random() * 18) + "s";
+
+    fondoDestellos.appendChild(particula);
+  }
+</script>
+
+<!-- DISEÑO PARA CELULARES AIZE DIGITAL -->
+<style>
+  /* Evitar que elementos se salgan de pantalla */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Adaptación a pantallas pequeñas */
+  @media screen and (max-width: 600px) {
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    main {
+      width: 100%;
+      max-width: 100%;
+      padding: 12px;
+    }
+
+    section {
+      width: 100%;
+      max-width: 100%;
+      padding: 25px 15px;
+      margin: 18px auto;
+    }
+
+    h1 {
+      font-size: clamp(36px, 10vw, 52px);
+    }
+
+    h2 {
+      font-size: clamp(24px, 7vw, 34px);
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .foto {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 20px auto;
+    }
+
+    /* Contador regresivo */
+    .contador {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 6px;
+      width: 100%;
+    }
+
+    .contador > div {
+      min-width: 0;
+      padding: 10px 3px;
+    }
+
+    .contador strong {
+      font-size: clamp(18px, 6vw, 30px);
+    }
+
+    .contador span {
+      font-size: clamp(8px, 2.5vw, 12px);
+    }
+
+    /* Botones */
+    .boton {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    /* Pantalla de bienvenida */
+    .contenido-bienvenida {
+      max-width: 100%;
+      padding: 35px 18px;
+    }
+  }
+</style>
+
+</body>
+</html>
